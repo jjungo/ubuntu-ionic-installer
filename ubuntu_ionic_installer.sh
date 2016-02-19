@@ -42,7 +42,9 @@ fi
 # Update all Ubuntu software repository lists
 apt-get update
 
-cd ~/Desktop
+mkdir -p /tmp/ionictmp/
+
+cd /tmp/ionictmp
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
 
@@ -113,9 +115,9 @@ cd "$INSTALL_PATH" && chmod 777 "node" -R
 cd "$INSTALL_PATH" && chmod 777 "gradle" -R
 
 # Clean up any files that were downloaded from the internet
-cd ~/Desktop && rm "android-sdk.tgz"
-cd ~/Desktop && rm "nodejs.tgz"
-cd ~/Desktop && rm "gradle.zip"
+cd /tmp/ionictmp && rm "android-sdk.tgz"
+cd /tmp/ionictmp && rm "nodejs.tgz"
+cd /tmp/ionictmp && rm "gradle.zip"
 
 echo "----------------------------------"
 echo "Restart your Ubuntu session for installation to complete..."
