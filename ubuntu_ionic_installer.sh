@@ -87,10 +87,10 @@ cd "$INSTALL_PATH" && chmod 777 "android-sdk" -R
 cd ~/
 
 # Add Android and NPM paths to the profile to preserve settings on boot
-echo "export PATH=\$PATH:$ANDROID_SDK_PATH/tools" >> ".profile"
-echo "export PATH=\$PATH:$ANDROID_SDK_PATH/platform-tools" >> ".profile"
-echo "export PATH=\$PATH:$NODE_PATH/bin" >> ".profile"
-echo "export PATH=\$PATH:$GRADLE_PATH/bin" >> ".profile"
+echo "export PATH=\$PATH:$ANDROID_SDK_PATH/tools" >> ".zshrc"
+echo "export PATH=\$PATH:$ANDROID_SDK_PATH/platform-tools" >> ".zshrc"
+echo "export PATH=\$PATH:$NODE_PATH/bin" >> ".zshrc"
+echo "export PATH=\$PATH:$GRADLE_PATH/bin" >> ".zshrc"
 
 # Add Android and NPM paths to the temporary user path to complete installation
 export PATH=$PATH:$ANDROID_SDK_PATH/tools
@@ -104,7 +104,7 @@ apt-get -qq -y install default-jdk ant
 # Set JAVA_HOME based on the default OpenJDK installed
 export JAVA_HOME="$(find /usr -type l -name 'default-java')"
 if [ "$JAVA_HOME" != "" ]; then
-    echo "export JAVA_HOME=$JAVA_HOME" >> ".profile"
+    echo "export JAVA_HOME=$JAVA_HOME" >> ".zshrc"
 fi
 
 # Install Apache Cordova and Ionic Framework
