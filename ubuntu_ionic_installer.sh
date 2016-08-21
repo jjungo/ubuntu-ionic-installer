@@ -16,7 +16,7 @@
 
 HOME_PATH=$(cd ~/ && pwd)
 INSTALL_PATH=/opt
-ANDROID_SDK_PATH=/opt/android-sdk
+ANDROID_SDK_PATH=/home/joel/Android/Sdk
 NODE_PATH=/opt/node
 GRADLE_PATH=/opt/gradle
 
@@ -49,15 +49,15 @@ cd /tmp/ionictmp
 if [ "$LINUX_ARCH" == "x86_64" ]; then
 
     wget -c "$NODE_X64" -O "nodejs.tgz" --no-check-certificate
-    wget -c "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
+    #wget -c "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
     wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
-    tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
+    #tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
     mv "gradle-2.9" "$INSTALL_PATH"
 
-    cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
+    #cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
     cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x64" "node"
     cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
@@ -67,22 +67,22 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
 else
 
     wget -c "$NODE_X86" -O "nodejs.tgz" --no-check-certificate
-    wget -c "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
+    #wget -c "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
     wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
-    tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
+    #tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
     mv "gradle-2.9" "$INSTALL_PATH"
 
-    cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
+    #cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
     cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x86" "node"
     cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
 fi
 
-cd "$INSTALL_PATH" && chown root:root "android-sdk" -R
-cd "$INSTALL_PATH" && chmod 777 "android-sdk" -R
+#cd "$INSTALL_PATH" && chown root:root "android-sdk" -R
+#cd "$INSTALL_PATH" && chmod 777 "android-sdk" -R
 
 cd ~/
 
@@ -115,7 +115,7 @@ cd "$INSTALL_PATH" && chmod 777 "node" -R
 cd "$INSTALL_PATH" && chmod 777 "gradle" -R
 
 # Clean up any files that were downloaded from the internet
-cd /tmp/ionictmp && rm "android-sdk.tgz"
+#cd /tmp/ionictmp && rm "android-sdk.tgz"
 cd /tmp/ionictmp && rm "nodejs.tgz"
 cd /tmp/ionictmp && rm "gradle.zip"
 
